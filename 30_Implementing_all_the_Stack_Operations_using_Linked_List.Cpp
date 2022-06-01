@@ -45,7 +45,6 @@ void pushh(node **ptr, int val)
     {
 
         cout << " Stack if full or overflow" << endl;
-        
     }
     else
     {
@@ -53,9 +52,13 @@ void pushh(node **ptr, int val)
         p->data = val;
         p->next = *ptr;
         *ptr = p;
-        
     }
 }
+
+/*
+Uper wale function m agr kuch return krte hai
+*/
+
 // node *pushh(node *ptr, int val)
 // {
 //     if (fulll(ptr))
@@ -74,47 +77,46 @@ void pushh(node **ptr, int val)
 //     }
 // }
 
+void popp(node **ptr)
+{
 
-
-void popp( node **ptr){
-    
-    if(emptyy(*ptr)){
-        cout<<"Stack underflow of empty"<<endl;
+    if (emptyy(*ptr))
+    {
+        cout << "Stack underflow of empty" << endl;
     }
-    else{
-        node * p = *ptr;
-        
-        int x = p->data;
-        *ptr=(*ptr)->next;
-        cout<<x<<" is poped from the stack "<<endl;
-        free(p);
-        
+    else
+    {
+        node *p = *ptr;
 
+        int x = p->data;
+        *ptr = (*ptr)->next;
+        cout << x << " is poped from the stack " << endl;
+        free(p);
     }
 }
 // node * popp( node *ptr){
-    
+
 //     if(emptyy(ptr)){
 //         cout<<"Stack underflow of empty"<<endl;
 //     }
 //     else{
 //         node * p = ptr;
-        
+
 //         int x = p->data;
 //         ptr=ptr->next;
 //         cout<<x<<" is poped from the stack "<<endl;
 //         free(p);
-//         return ptr;
+//
 
 //     }
+//  return ptr;
 // }
-
 
 int main()
 {
 
     node *top = NULL;
-// pushinf element to stack with linkedlist 
+    // pushinf element to stack with linkedlist
     pushh(&top, 6);
     pushh(&top, 75);
     pushh(&top, 65);
@@ -126,12 +128,12 @@ int main()
     // top = pushh(top, 65);
     // top = pushh(top, 5);
     // top = pushh(top, 55);
-    
-    cout<<"pushing element to stack "<<endl;
-    
+
+    cout << "pushing element to stack " << endl;
+
     printt(top);
 
-    cout<<"After poped element from stack "<<endl;
+    cout << "After poped element from stack " << endl;
     // top = popp(top);
     // top = popp(top);
     // top = popp(top);
@@ -139,7 +141,6 @@ int main()
     popp(&top);
     popp(&top);
     popp(&top);
-   
 
     return 0;
 }
