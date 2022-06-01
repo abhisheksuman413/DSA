@@ -91,10 +91,10 @@ node* inser_in_after_node(node*head, node*prvnode,int element){
 int main()
 {
 
-    node *head = new node;
-    node *first = new node;
-    node *second = new node;
-    node *third = new node;
+    node *head = new node();
+    node *first = new node();
+    node *second = new node();
+    node *third = new node();
 
     head->data = 13;
     head->next = first;
