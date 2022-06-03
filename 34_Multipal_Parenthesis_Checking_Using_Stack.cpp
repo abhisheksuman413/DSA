@@ -62,7 +62,8 @@ void popp(stackk *ptr)
 bool checkkk(char c, stackk *&abhi)
 {
     if(c == ')' && abhi->arrr[abhi->top] == '(') return true;
-    
+    else if(c == '}' && abhi->arrr[abhi->top] == '{') return true;
+    else if(c == ']' && abhi->arrr[abhi->top] == '[') return true;
     else return false;
 }
 
@@ -71,7 +72,7 @@ void parenthesiss(stackk *&abhi, string  ptr)
 
     for (int i = 0; ptr[i] != '\0'; i++)
     {
-        if (ptr[i] == '(' )
+        if (ptr[i] == '(' || ptr[i] == '{' || ptr[i] == '[')
         {
             pushh(abhi, ptr[i]);
         }
