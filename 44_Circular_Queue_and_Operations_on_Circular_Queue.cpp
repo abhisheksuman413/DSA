@@ -38,8 +38,8 @@ int emptyy(Circular_Queuee *ar)
     }
 }
 
-void enqueuee(Circular_Queuee *ar, int val)
-{
+void enqueuee(Circular_Queuee *ar, int val)  // yha *&ar nhi likhe hai becouse niche se array &ar asa aata hai
+{                                           // isliye bina & use kiye v change hota hai 
     if (fulll(ar))
     {
     }
@@ -72,7 +72,7 @@ void printt(Circular_Queuee *ar)
                 cout << "The Element is :- " << ar->arrr[i] << endl;
             }
             int q = 0;
-            while(q != ar->frontend)
+            while(q <= ar->lastend)
             {
                 cout<<"The Element is :- "<<ar->arrr[q]<<endl;
                 q++;
